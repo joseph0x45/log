@@ -37,7 +37,11 @@ int main(int argc, char **argv) {
   return 0;
 }
 
-void print_usage(void) { printf("log <title> <content>\n"); }
+void print_usage(void) {
+  printf("Add new log entry\n\tlog <title> <content>\n"
+         "Display logs for the current date\n\tlog show\n"
+         "Display logs for a specific date\n\tlog show 2022-05-05\n");
+}
 
 char *get_log_home(void) {
   static char log_home[PATH_MAX];
