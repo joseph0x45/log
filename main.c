@@ -1,6 +1,7 @@
 #include <linux/limits.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/stat.h>
 #include <time.h>
 
@@ -58,6 +59,10 @@ void get_current_date_time(char *date_out, size_t date_size, char *time_out,
 }
 
 int log_entry(char *title, char *content) {
+  if (strcmp(title, "") == 0 || strcmp(content, "") == 0) {
+    print_usage();
+    return 1;
+  }
   char current_date[DATE_SIZE], current_time[TIME_SIZE];
   get_current_date_time(current_date, sizeof(current_date), current_time,
                         sizeof(current_time));
