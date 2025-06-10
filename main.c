@@ -38,6 +38,7 @@ int main(int argc, char **argv) {
 }
 
 void print_usage(void) {
+  printf("Log - CLI log tracker - https://github.com/joseph0x45/log\n");
   printf("Add new log entry\n\tlog <title> <content>\n"
          "Display logs for the current date\n\tlog show\n"
          "Display logs for a specific date\n\tlog show 2022-05-05\n");
